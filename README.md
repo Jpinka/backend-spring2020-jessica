@@ -1,2 +1,2 @@
 # backend-spring2020-jessica
-Class assignments and projects for Ed
+Class assignments and projects for Eduardo

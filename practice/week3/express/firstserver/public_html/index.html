@@ -1,0 +1,122 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>First Node "App"</title>
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+
+  <style>
+    body {
+      font-size: 48px;
+    }
+
+    input {
+      font-size: 48px;
+    }
+
+    button {
+      font-size: 48px;
+    }
+  </style>
+
+
+<!-- We go to the internet and get the jQuery file to run in our webpage. -->
+<script
+  src="https://code.jquery.com/jquery-3.5.0.min.js"
+  integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
+  crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+  <form>
+    <label for="age">Enter Your Age</label><br />
+    <input type="text" id="age" /><br />
+    <label for="name">Enter Your Name</label><br />
+    <input type="text" id="name" />
+  </form>
+
+  <button id="submit">Submit Age Number To Server</button>
+
+  <div id="message"></div>
+
+
+  <script>
+    // CODE AFTER THIS IS JAVASCRIPT
+    
+    // When the "document" (which is the HTML code) is ready, then run the function provided inside the ready function. This makes sure jQuery waits until the webpage is ready.
+    $(document).ready(() => {
+
+      // Select the Submit button and attach a click handler/listener.
+      $("#submit").click(() => {
+
+        // Get the value of the text box and store it in the ageValue/nameValue variable.
+        let ageValue = $("#age").val();
+        let nameValue = $("#name").val();
+
+        // Test the input for valid number.
+        ageValue = parseInt(ageValue);
+
+        if (ageValue > 0) {
+
+          // console.log("The value for age is " + ageValue);
+          let dataObject = {
+            "age": ageValue,
+            "name": nameValue
+          };
+          
+          // AJAX POST CALL using jQuery
+          // First argument is where to send it to, second argument is what to send, third argument is what to do when the server has responded.
+          $.post("http://localhost:8080/submitAge", dataObject, (dataFromServer) => {
+            console.log(dataFromServer);
+
+            if (dataFromServer.canDrink) {
+              $("#message").html("<p>Congratz, go have a soda!</p>");
+            } else {
+              $("#message").html("<p>No soda for you!</p>");
+            }
+          });
+
+
+        } else {
+          $("#message").html("That number is not a valid age.");
+        }
+
+      });
+      
+    });
+
+    // CODE BEFORE THIS IS JAVASCRIPT
+  </script>
+</body>
+</html>
+
+
+
+
+
+<!-- 
+
+"Classic Syntax"
+function (time, space) {
+  let spacetime = time * space;
+  return spacetime;
+}
+
+"Fat Arrow Syntax"
+(time, space) => {
+  let spacetime = time * space;
+  return spacetime;
+}
+
+(time) => {return time * 10;}
+
+"Shorthand Fat Arrow Syntax" only available to single argument with single statement
+time => return time * 10
+
+
+
+-->

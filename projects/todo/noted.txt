@@ -1,0 +1,28 @@
+PROGRAM NAME: NOTED
+
+---What are the colors, dimensions, font families, font sizes etc, of the website?
+
+Default Border background: Royal Blue
+
+Default Note Color: White
+
+Default font size: 12px
+
+Default font family: Arial
+
+	* Palatino Linotype, Book Antiqua3, Palatino, serif	
+	* Arial, Arial, Helvetica, sans-serif	 
+
+---What is the layout of the front end of the program?
+	* H1-Welcome to Noted (Heading)
+	* H2-Have ideas? We have notes (tagline) 
+	* centered: Medium size note will appear on the screen after user clicks start
+	 -
+
+
+---How and what will jQuery handle during the user experience of the front end?
+
+	* Buttons: Start, Finish, Delete, Edit
+
+---How will the front-end handle messages to, and from, the backend?
+

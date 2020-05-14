@@ -8,7 +8,8 @@
   <meta name="description" content="The HTML5 Herald">
   <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <!--  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  -->
 <style>
   /*page bckground*/
   body {
@@ -57,7 +58,13 @@
     border-style: double;
     border-color: snow;
     border-width: 9px;
+    
+    
 
+  }
+  #clickstart:hover {
+    background-color: rgba(238, 130, 238, 0.226);
+    
   }
 /*Button style end here*/
 
@@ -80,16 +87,22 @@
   <li>Feel free to brag to your friends about how awesome we are!</li>
   <li>We mean it, go brag!</li>
 </ol>
-
-<button id="clickstart">Click Me To Start a Note</button>
-
-<button id="clickend">Click Me to Submit a Current Note</button>
-
-<button id="freeclick">Click Me for Good Luck!</button>
-
 </p>
 
 
-  <script src="js/scripts.js"></script>
+<form>
+
+<label for="clickstart" id="clickstart">Click Me to Start a Note:</label>
+<input type="text" id="clickstart"> 
+<button type="submit" id="submit">SUBMIT</button>
+
+<button type="submit" id="clickend">Click Me to Submit a Current Note</button>
+
+<button type="submit" id="freeclick">Click Me for Good Luck!</button>
+</label>
+
+
+
+<script src="script.js"></script> 
 </body>
 </html>

@@ -16,7 +16,14 @@ function test$(arrayToTest) {
 };
 
 // Wait until HTML has fully loaded.
+
+
+// this is where i can put my jQuery code. Def of functions and global variables can only be outside the doc ready function. inside doc ready is Jquery n JS.
 $(document).ready(() => {
+
+    $("#clickstart").click(() => {
+        console.log("JEsscf");
+    });
 
     // Use test$ to test jQuery Selector: test$( $("CSS Selector") );
     test$( $("ol") );
